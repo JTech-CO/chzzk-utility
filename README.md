@@ -162,3 +162,4 @@ chzzk-utility/
 
 - **License**: MIT
 - **Version**: 2.1.1
+- **Privacy-policy**: [개인정보 처리방침 안내](<https://jtech-co.github.io/chzzk-utility/privacy-policy.html>)
