@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "Chzzk Utility",
+  "version": "2.1.1",
+  "description": "치지직 광고 제거, 최고 화질 고정, 되감기 컨트롤 등을 추가하는 확장프로그램",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://chzzk.naver.com/*",
+    "*://api.chzzk.naver.com/*",
+    "*://*.naver.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ck_static",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chzzk.naver.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "controls.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inject.js"
+      ],
+      "matches": [
+        "*://chzzk.naver.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Chzzk Utility",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

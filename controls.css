@@ -1,0 +1,72 @@
+#ck-controls.ck-controls {
+  --ck-bg:  #1a1b1e;
+  --ck-bg2: #26272b;
+  --ck-bg3: #2f3136;
+  --ck-acc: #00ffa3;
+  --ck-acc-d: rgba(0, 255, 163, .15);
+  --ck-tx:  #e4e5e7;
+  --ck-tx2: #8b8d91;
+  --ck-brd: rgba(255, 255, 255, .06);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  margin: 8px 0 8px 12px;
+  vertical-align: middle;
+  background: var(--ck-bg2);
+  border: 1px solid var(--ck-brd);
+  border-radius: 8px;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#ck-controls .ck-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ck-tx);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 6px 10px;
+  min-width: 32px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, color 120ms ease-out, border-color 120ms ease-out;
+}
+
+#ck-controls .ck-btn:hover {
+  background: var(--ck-bg3);
+  color: var(--ck-tx);
+}
+
+#ck-controls .ck-btn:active {
+  background: var(--ck-bg);
+}
+
+#ck-controls .ck-btn:focus-visible {
+  outline: none;
+  border-color: var(--ck-acc);
+  box-shadow: 0 0 0 2px var(--ck-acc-d);
+}
+
+#ck-controls .ck-btn-live {
+  color: var(--ck-acc);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+  padding: 6px 12px;
+}
+
+#ck-controls .ck-btn-live:hover {
+  background: var(--ck-acc-d);
+  border-color: var(--ck-acc);
+  color: var(--ck-acc);
+}

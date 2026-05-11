@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Chzzk Utility</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <header class="ck-head">
+    <div class="ck-head-left">
+      <h1>Chzzk Utility</h1>
+    </div>
+    <span class="ck-version" id="ck-version">v1.0</span>
+  </header>
+
+  <section class="ck-section">
+    <h2>광고 / 방해 요소</h2>
+
+    <label class="ck-row" for="opt-blockAds">
+      <div class="ck-row-text">
+        <span class="ck-row-title">광고 제거</span>
+        <span class="ck-row-desc">라이브·다시보기 재생 전/중간 광고와 광고 도메인을 차단합니다.</span>
+      </div>
+      <span class="ck-switch">
+        <input type="checkbox" id="opt-blockAds" />
+        <span class="ck-track"></span>
+      </span>
+    </label>
+
+    <label class="ck-row" for="opt-removeBanners">
+      <div class="ck-row-text">
+        <span class="ck-row-title">배너 광고 숨김</span>
+        <span class="ck-row-desc">방송 페이지 안의 배너·프로모션 영역을 숨깁니다.</span>
+      </div>
+      <span class="ck-switch">
+        <input type="checkbox" id="opt-removeBanners" />
+        <span class="ck-track"></span>
+      </span>
+    </label>
+
+    <label class="ck-row" for="opt-hideAdblockPopup">
+      <div class="ck-row-text">
+        <span class="ck-row-title">광고 차단 감지 팝업 숨김</span>
+        <span class="ck-row-desc">"광고 차단 프로그램을 사용 중이신가요?" 모달을 자동으로 닫습니다.</span>
+      </div>
+      <span class="ck-switch">
+        <input type="checkbox" id="opt-hideAdblockPopup" />
+        <span class="ck-track"></span>
+      </span>
+    </label>
+  </section>
+
+  <section class="ck-section">
+    <h2>플레이어</h2>
+
+    <label class="ck-row" for="opt-forceMaxQuality">
+      <div class="ck-row-text">
+        <span class="ck-row-title">최고 화질 유지</span>
+        <span class="ck-row-desc">방송이 시작되거나 화질이 자동으로 떨어졌을 때 원본 화질로 되돌립니다.</span>
+      </div>
+      <span class="ck-switch">
+        <input type="checkbox" id="opt-forceMaxQuality" />
+        <span class="ck-track"></span>
+      </span>
+    </label>
+
+    <label class="ck-row" for="opt-enableTimemachine">
+      <div class="ck-row-text">
+        <span class="ck-row-title">라이브 타임머신 활성화</span>
+        <span class="ck-row-desc">스트리머 설정에 관계없이 라이브 되감기를 사용할 수 있도록 합니다.</span>
+      </div>
+      <span class="ck-switch">
+        <input type="checkbox" id="opt-enableTimemachine" />
+        <span class="ck-track"></span>
+      </span>
+    </label>
+
+    <label class="ck-row" for="opt-showControls">
+      <div class="ck-row-text">
+        <span class="ck-row-title">되감기 컨트롤 표시</span>
+        <span class="ck-row-desc">제목 옆에 뒤로가기, 되감기, 다시보기, 정지 버튼을 표시합니다.</span>
+      </div>
+      <span class="ck-switch">
+        <input type="checkbox" id="opt-showControls" />
+        <span class="ck-track"></span>
+      </span>
+    </label>
+  </section>
+
+  <footer class="ck-foot">
+    <span id="ck-status" class="ck-status">설정이 자동으로 저장됩니다</span>
+    <button type="button" id="ck-reset" class="ck-link">초기화</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

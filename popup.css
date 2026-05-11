@@ -1,0 +1,219 @@
+:root {
+  --bg:  #1a1b1e;
+  --bg2: #26272b;
+  --bg3: #2f3136;
+  --acc: #00ffa3;
+  --acc-d: rgba(0, 255, 163, .15);
+  --tx:  #e4e5e7;
+  --tx2: #8b8d91;
+  --brd: rgba(255, 255, 255, .06);
+  --err: #ff4d6a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo",
+               "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--tx);
+  background: var(--bg);
+}
+
+body {
+  width: 340px;
+  min-height: 100px;
+}
+
+/* ── 헤더 ─────────────────────────── */
+
+.ck-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--brd);
+  background: var(--bg2);
+}
+
+.ck-head-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ck-head h1 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #00ffa3;
+}
+
+.ck-version {
+  font-size: 11px;
+  color: var(--tx2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 섹션 ─────────────────────────── */
+
+.ck-section {
+  padding: 12px 8px 8px;
+  border-bottom: 1px solid var(--brd);
+}
+
+.ck-section:last-of-type {
+  border-bottom: none;
+}
+
+.ck-section h2 {
+  margin: 0 8px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tx2);
+}
+
+/* ── 행 ─────────────────────────── */
+
+.ck-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 120ms ease-out;
+}
+
+.ck-row:hover {
+  background: var(--bg2);
+}
+
+.ck-row-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ck-row-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tx);
+}
+
+.ck-row-desc {
+  font-size: 11.5px;
+  color: var(--tx2);
+  line-height: 1.4;
+}
+
+/* ── 스위치 ─────────────────────────── */
+
+.ck-switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 32px;
+  height: 18px;
+}
+
+.ck-switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.ck-track {
+  position: absolute;
+  inset: 0;
+  background: var(--bg3);
+  border: 1px solid var(--brd);
+  border-radius: 999px;
+  transition: background-color 140ms ease-out, border-color 140ms ease-out;
+  pointer-events: none;
+}
+
+.ck-track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background: var(--tx2);
+  border-radius: 50%;
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease-out;
+}
+
+.ck-switch input:checked + .ck-track {
+  background: var(--acc-d);
+  border-color: var(--acc);
+}
+
+.ck-switch input:checked + .ck-track::after {
+  transform: translateX(14px);
+  background: var(--acc);
+}
+
+.ck-switch input:focus-visible + .ck-track {
+  box-shadow: 0 0 0 2px var(--acc-d);
+}
+
+/* ── 푸터 ─────────────────────────── */
+
+.ck-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg2);
+  border-top: 1px solid var(--brd);
+}
+
+.ck-status {
+  font-size: 11px;
+  color: var(--tx2);
+}
+
+.ck-status.is-saved {
+  color: var(--acc);
+}
+
+.ck-link {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11.5px;
+  color: var(--tx2);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color 120ms ease-out, background-color 120ms ease-out;
+}
+
+.ck-link:hover {
+  color: var(--tx);
+  background: var(--bg3);
+}
+
+.ck-link:focus-visible {
+  outline: none;
+  color: var(--tx);
+  box-shadow: 0 0 0 2px var(--acc-d);
+}

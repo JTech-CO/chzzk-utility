@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chzzk Utility 개인정보 처리방침</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+    :root {
+      --bg: #1a1b1e;
+      --bg2: #26272b;
+      --bg3: #2f3136;
+      --acc: #00ffa3;
+      --acc-d: rgba(0, 255, 163, .15);
+      --tx: #e4e5e7;
+      --tx2: #8b8d91;
+      --brd: rgba(255, 255, 255, .06);
+      --err: #ff4d6a;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--tx);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      padding: 40px 20px;
+    }
+
+    .header {
+      margin-bottom: 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--brd);
+      padding-bottom: 30px;
+    }
+
+    .logo-container {
+      width: 64px;
+      height: 64px;
+      background: var(--bg2);
+      border: 1.5px solid var(--acc);
+      border-radius: 16px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0, 255, 163, 0.1);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo-container:hover {
+      transform: scale(1.08);
+      background: var(--bg3);
+    }
+
+    .logo-container svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--acc);
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: var(--tx);
+    }
+
+    .last-updated {
+      font-size: 14px;
+      color: var(--tx2);
+    }
+
+    /* Layout Grid */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-box {
+      background: var(--bg2);
+      border: 1px solid var(--brd);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .2);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .content-box:hover {
+      border-color: var(--acc-d);
+      transform: translateY(-2px);
+    }
+
+    /* Sidebar Sticky */
+    .sidebar {
+      position: sticky;
+      top: 24px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--acc);
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 16px;
+      background: var(--acc);
+      border-radius: 2px;
+    }
+
+    p {
+      margin: 0 0 16px 0;
+      font-size: 15px;
+      color: var(--tx);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.default-list {
+      margin: 0 0 16px 0;
+      padding-left: 20px;
+    }
+
+    ul.default-list li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: var(--tx);
+      line-height: 1.6;
+    }
+
+    ul.default-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: var(--acc);
+      font-weight: 600;
+      background: var(--acc-d);
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+
+    /* History List */
+    .history-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .history-item {
+      position: relative;
+      padding-left: 18px;
+      padding-bottom: 16px;
+      border-left: 2px solid var(--brd);
+      transition: border-color 0.2s;
+    }
+
+    .history-item:hover {
+      border-left-color: var(--acc);
+    }
+
+    .history-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .history-item:last-child:hover {
+      border-left-color: transparent;
+    }
+
+    .history-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--bg2);
+      border: 2px solid var(--brd);
+      transition: all 0.2s;
+    }
+
+    .history-item:hover::before {
+      border-color: var(--acc);
+      background: var(--acc);
+    }
+
+    .history-item .version {
+      font-weight: 700;
+      color: var(--acc);
+      font-size: 14px;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .history-item .desc {
+      font-size: 13px;
+      color: var(--tx2);
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--brd);
+      font-size: 13px;
+      color: var(--tx2);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--acc);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <!-- 열쇠 아이콘 -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M12.65 10A5.99 5.99 0 0 0 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6a5.99 5.99 0 0 0 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
+        </svg>
+      </div>
+      <h1>Chzzk Utility 개인정보 처리방침</h1>
+      <div class="last-updated">최종 업데이트: 2026년 5월 11일</div>
+    </div>
+
+    <div class="layout-grid">
+      <!-- 메인 콘텐츠 영역 -->
+      <div class="main-content">
+        <div class="content-box">
+          <h2>1. 개인정보 수집 및 이용</h2>
+          <p><strong>Chzzk Utility</strong>는 사용자 개인을 식별할 수 있는 <span class="highlight">어떠한 개인정보도 수집, 저장, 전송하지
+              않습니다.</span></p>
+          <p>본 확장 프로그램은 오직 네이버 치지직(Chzzk) 라이브 및 다시보기 시청 환경을 개선하기 위한 유틸리티 목적으로만 동작합니다.</p>
+        </div>
+
+        <div class="content-box">
+          <h2>2. 권한(Permissions) 사용 목적</h2>
+          <p>확장 프로그램이 원활히 동작하기 위해 구글 크롬 웹스토어 정책에 따라 다음과 같은 최소한의 권한을 요청합니다:</p>
+          <ul class="default-list">
+            <li><strong>declarativeNetRequest</strong>: 광고 관련 네트워크 요청(veta.naver.com 등)을 정적 룰셋으로 차단하기 위해 사용됩니다. 사용자의
+              브라우징 데이터를 수집하거나 외부로 전송하지 않습니다.</li>
+            <li><strong>storage</strong>: 사용자가 팝업에서 설정한 옵션(광고 차단, 화질 고정, 타임머신 등)을 브라우저 로컬 저장소에 저장하기 위해 사용됩니다. 저장된 데이터는
+              사용자의 디바이스에만 보관됩니다.</li>
+            <li><strong>scripting</strong>: 치지직 페이지에 유틸리티 스크립트를 주입하여 API 응답 변조(광고 제거, 타임머신 활성화) 및 UI 컨트롤을 삽입하기 위해 사용됩니다.
+            </li>
+            <li><strong>호스트 권한 (*.naver.com 등)</strong>: 치지직 API 응답을 가져와서 광고 메타데이터를 제거하고, 타임머신 기능을 강제 활성화하기 위해 필요합니다.
+              이러한 처리는 사용자의 브라우저 내에서만 이루어지며 외부 서버로 어떠한 데이터도 전송되지 않습니다.</li>
+          </ul>
+        </div>
+
+        <div class="content-box">
+          <h2>3. 데이터 처리 방식</h2>
+          <p>본 확장 프로그램은 치지직 API 응답을 브라우저 내에서 실시간으로 가공하여 광고를 제거하고 기능을 활성화합니다. 이 과정에서:</p>
+          <ul class="default-list">
+            <li>사용자의 로그인 정보, 시청 기록, 개인 식별 정보에 <span class="highlight">일절 접근하지 않습니다.</span></li>
+            <li>네트워크 요청 차단은 선언적(declarative) 방식으로만 이루어지며, 요청 내용을 읽거나 기록하지 않습니다.</li>
+            <li>모든 데이터 처리는 사용자의 로컬 브라우저 내에서 완료되며, <span class="highlight">제3자 서버를 경유하지 않습니다.</span></li>
+          </ul>
+        </div>
+
+        <div class="content-box">
+          <h2>4. 개인정보 처리방침의 변경</h2>
+          <p>본 확장 프로그램의 업데이트나 크롬 웹스토어 정책 변경 등에 따라 이 개인정보 처리방침의 내용이 변경될 수 있습니다. 변경사항이 발생할 경우 버전 업데이트를 통해 안내되며, 본 페이지가
+            지속적으로 최신화될 것입니다.</p>
+        </div>
+      </div>
+
+      <!-- 사이드바 (업데이트 내역) -->
+      <div class="sidebar">
+        <div class="content-box">
+          <h2>업데이트 내역</h2>
+          <ul class="history-list">
+            <li class="history-item">
+              <div class="version">v2.1.1</div>
+              <div class="desc">되감기 컨트롤 중앙 버튼을 Pause/Play 토글 방식으로 변경, 팝업 차단 범위 강화</div>
+            </li>
+            <li class="history-item">
+              <div class="version">v2.1.0</div>
+              <div class="desc">확장프로그램 명칭 변경 (Chzzk Utility) 및 버전 업데이트</div>
+            </li>
+            <li class="history-item">
+              <div class="version">v2.0.0</div>
+              <div class="desc">라이브 방송 강제 이탈 방지 및 자동 복귀 기능 추가, 비정상 접근 경고 팝업 자동 닫기, Brave 브라우저 화질 강제 우회(Main World
+                localStorage 후킹), 컨트롤 바 라벨 개선</div>
+            </li>
+            <li class="history-item">
+              <div class="version">v1.0.0</div>
+              <div class="desc">Chzzk Cheatkey 최초 출시 — 광고 제거(응답 변조 + 네트워크 룰 차단), 배너 광고 숨김, 최고 화질 고정, 타임머신 되감기 컨트롤, 설정 팝업
+                UI</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Chzzk Utility. All rights reserved.<br>
+      이 확장 프로그램은 치지직 시청 환경 개선을 위한 비공식 유틸리티 도구입니다.
+    </div>
+  </div>
+</body>
+
+</html>

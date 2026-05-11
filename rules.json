@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||ssl.pstatic.net/static/nng/aclk/",
+      "resourceTypes": ["xmlhttprequest", "image", "media", "sub_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||siape.veta.naver.com/",
+      "resourceTypes": ["xmlhttprequest", "image", "media", "sub_frame", "ping"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||veta.naver.com/",
+      "resourceTypes": ["xmlhttprequest", "media", "sub_frame", "ping"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||cc.naver.com/cc",
+      "resourceTypes": ["xmlhttprequest", "image", "ping"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||naver.com/wcslog.js",
+      "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/ad/",
+      "initiatorDomains": ["chzzk.naver.com"],
+      "resourceTypes": ["xmlhttprequest", "media"]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "ad.gateway",
+      "initiatorDomains": ["chzzk.naver.com"],
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  }
+]
