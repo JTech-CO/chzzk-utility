@@ -40,7 +40,8 @@ const DEFAULTS = {
   removeBanners: true,
   forceMaxQuality: true,
   enableTimemachine: true,
-  showControls: true
+  showControls: true,
+  preventLiveDeparture: true
 };
 
 let settings = { ...DEFAULTS };
@@ -105,15 +106,16 @@ function killPopups() {
     dismissPopup(el);
   }
 
-  /* 셀렉터에 걸리지 않는 인라인 모달 탐색 (fixed/absolute 위치의 상위 div) */
-  document.querySelectorAll('div').forEach(el => {
-    if (el.dataset.ckKilled) return;
+  /* 인라인 모달 탐색 최적화 (포털 컨테이너 한정) */
+  const portalCandidates = document.querySelectorAll('body > div, [id*="root" i] > div, [id*="portal" i] > div');
+  for (const el of portalCandidates) {
+    if (el.dataset.ckKilled) continue;
     const cs = getComputedStyle(el);
-    if (cs.position !== 'fixed' && cs.position !== 'absolute') return;
-    if (parseInt(cs.zIndex) < 100) return;
-    if (!isBlockablePopup(el)) return;
+    if (cs.position !== 'fixed' && cs.position !== 'absolute') continue;
+    if (parseInt(cs.zIndex) < 100) continue;
+    if (!isBlockablePopup(el)) continue;
     dismissPopup(el);
-  });
+  }
 }
 
 function dismissPopup(el) {

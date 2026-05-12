@@ -49,7 +49,7 @@
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "/ad/",
+      "urlFilter": "||chzzk.naver.com/ad/",
       "initiatorDomains": ["chzzk.naver.com"],
       "resourceTypes": ["xmlhttprequest", "media"]
     }

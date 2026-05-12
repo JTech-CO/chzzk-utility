@@ -4,7 +4,8 @@ const DEFAULT_SETTINGS = {
   removeBanners: true,
   forceMaxQuality: true,
   enableTimemachine: true,
-  showControls: true
+  showControls: true,
+  preventLiveDeparture: true
 };
 
 chrome.runtime.onInstalled.addListener(async () => {

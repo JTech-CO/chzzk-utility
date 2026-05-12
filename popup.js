@@ -4,7 +4,8 @@ const DEFAULTS = {
   removeBanners: true,
   forceMaxQuality: true,
   enableTimemachine: true,
-  showControls: true
+  showControls: true,
+  preventLiveDeparture: true
 };
 
 const KEYS = Object.keys(DEFAULTS);

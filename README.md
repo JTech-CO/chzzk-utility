@@ -147,7 +147,7 @@ chzzk-utility/
 ├── content.js         # Isolated World — DOM 팝업/배너 제거, 화질 메뉴, 되감기 컨트롤, 라이브 복귀
 ├── inject.js          # Main World — fetch/XHR/localStorage/History 프로토타입 후킹
 ├── controls.css       # 되감기 컨트롤 바 스타일시트
-├── popup.html         # 확장 프로그램 설정 팝업 UI (6개 토글 스위치)
+├── popup.html         # 확장 프로그램 설정 팝업 UI (7개 토글 스위치)
 ├── popup.js           # 설정 팝업 로직 — chrome.storage.local 읽기/쓰기
 ├── popup.css          # 설정 팝업 스타일시트
 └── icons/             # 확장 프로그램 아이콘 (16/48/128 PNG)
@@ -161,5 +161,5 @@ chzzk-utility/
 ## 7. 정보 (Info)
 
 - **License**: MIT
-- **Version**: 2.1.1
+- **Version**: 2.2.0
 - **Privacy-policy**: [개인정보 처리방침 안내](<https://jtech-co.github.io/chzzk-utility/privacy-policy.html>)

@@ -16,7 +16,8 @@
   const getSettings = () => window.__CK_SETTINGS__ || {
     blockAds: true,
     enableTimemachine: true,
-    forceMaxQuality: true
+    forceMaxQuality: true,
+    preventLiveDeparture: true
   };
 
   window.addEventListener('message', (e) => {
@@ -75,6 +76,7 @@
   }, true);
 
   function shouldBlockNav(url) {
+    if (!getSettings().preventLiveDeparture) return false;
     if (userInitiated) return false;
     if (!LIVE_PAGE_RE.test(location.href)) return false;
     if (url == null) return false;

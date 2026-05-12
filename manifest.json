@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Chzzk Utility",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "치지직 광고 제거, 최고 화질 고정, 되감기 컨트롤 등을 추가하는 확장프로그램",
   "permissions": [
     "declarativeNetRequest",
